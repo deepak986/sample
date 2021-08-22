@@ -1462,7 +1462,7 @@ nav #TSA h2 span {
   .resize-heading {
     position: relative;
     top: 50%;
-    left: 50%;
+    left: 100%;
   }
   .resize-heading h1 {
     width: 100%;

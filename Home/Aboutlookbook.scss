@@ -1,0 +1,934 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap');
+
+$primarycolor: white;
+$primaryFont: 'Cormorant Garamond', serif;
+$secondaryFont: 'Commissioner', sans-serif; 
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: black;
+    scroll-behavior: smooth;
+}
+
+.nav-container{
+    height: 100vh;
+}
+nav {
+    width: 100%;
+    background: transparent;
+    height: 100vh;
+    cursor: auto;
+
+    #TSA{
+        color:rgba(255, 255, 255, 0.945);
+        font-family: 'Tajawal', sans-serif;
+    }
+    #TSA h1 a {
+        color:rgba(255, 255, 255, 0.87);
+    }
+    #TSA h1 a:hover {
+        color: $primarycolor;
+    }
+    
+    #TSA h1 {
+        float: left;
+        display: block;
+        margin-left: 50px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        line-height: 5rem;
+    }
+    #TSA h2 {
+        float: right;
+        margin-right: 100px;
+        display: block;
+        font-size: 14px;
+        line-height: 4.5rem;
+        letter-spacing: .5rem;
+    }
+    #TSA h2 span {
+        float: right;
+        line-height: 4rem;
+        display: block;
+        font-size: 12px;
+    }
+}
+
+
+#toggle {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+#toggle .span {
+    border-radius: 20px;
+    height: 1.5px;
+    background: $primarycolor;
+    backface-visibility: hidden;
+    margin: 10px auto;
+    transition: all .6s ease-out;
+}
+#toggle.on {
+    z-index: 999;
+}
+#toggle.on #one {
+    transform: rotate(40deg) translateX(0px) translateY(0px);
+}
+
+#toggle.on #two {
+    transform: rotate(-40deg) translateX(7.5px) translateY(-9.5px);
+}
+
+#resize {
+    z-index: 1;
+    top: 0px;
+    position: absolute;
+    background: #bbb8ab;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-out;
+    display: table;
+}
+
+#resize #menu {
+    height: 90px;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    padding: 20px 0;
+    min-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+    margin-top: 140px;
+}
+
+#resize #menu li a {
+    color: $primarycolor;
+    font-weight: 100;
+    font-size: 80px;
+    font-family: $primaryFont;
+    margin-left: 3%;
+    text-transform: uppercase;
+}
+#resize #menu li a:hover {
+    text-decoration: none;
+}
+#resize #menu li a span {
+    font-size: 20px;
+    font-family: $secondaryFont;
+    margin: 0% 8%;
+    text-transform: uppercase;
+}
+#resize #menu li a svg {
+    transform: rotate(45deg);
+    margin-left: 2%;
+    opacity: 0;
+}
+#resize #menu li a:hover svg {
+    opacity: 1;
+    transition: .6s ease-in;
+}
+#resize.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 1.2s ease-in;
+}
+.resize-heading{
+    margin: 0% 38%;
+
+    h1{
+        width: 200%;
+        color: $primarycolor;
+        font-size: 20px;
+        font-family: $secondaryFont;
+    }
+    h2{
+        width: 175%;
+        font-size: 15px;
+        font-family: $secondaryFont;
+        color: rgba(255, 255, 255, 0.801);
+        letter-spacing: .2rem;
+        line-height: 1.5rem;
+    }
+    h2:nth-child(2){
+        margin: 10% 0%;
+    }
+    a{
+        color: $primarycolor;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        font-family: $secondaryFont;
+        line-height: 4rem; 
+    }
+    a:hover{
+        text-decoration: underline;
+        padding-right: .8%;
+    }
+}
+
+.brand-container{
+
+
+    .bike{
+        width: 20%;
+        position: absolute;
+        top: 20%;
+        left: 40%;
+    }
+
+    .social-brand{
+        position: absolute;
+        top: 94%;
+        left: 8%;
+        transform: translate(-50%, -50%);
+    
+        ul li{
+            font-size: 18px;
+            font-family: $secondaryFont;
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer; 
+        }
+    
+        ul li a{
+            color: rgba(255, 255, 255, 0.884);
+            text-transform: uppercase;
+        }
+    }
+    .brand-horz {
+        position: absolute;
+        top: 94%;
+        left: 94%;
+        transform: translate(-50%, -50%);
+        width: 8%;
+        color: $primarycolor;
+        font-family: $primaryFont;
+    
+    }
+}
+
+.about-flex{
+    display: flex;
+
+    .about-left{
+        flex-basis: 50%;
+        margin-left: 15%;
+    }
+
+    .about-right{
+        flex-basis: 50%;
+        margin-top: 20%;
+
+        img{
+            width: 50%;
+        }
+    }
+}
+
+.leather-container{
+    text-align: center;
+
+    h1{
+        width: 20%;
+        margin: 5% 37%;
+        color: $primarycolor;
+        font-family: $primaryFont;
+        text-align: start;
+    }
+
+    .leather-heading{
+        margin: 1% 0%;
+        display: flex;
+        color: $primarycolor;
+        font-family: $secondaryFont;
+
+        h2{
+            margin-left: 48%;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        h3{
+            margin-left: 7%;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+}
+
+
+.pic-container{
+    padding: 8% 0%;
+
+    .pic-flex{
+        display: flex;
+
+        .pic-left{
+            flex-basis: 60%;
+            padding: 0% 10%;
+
+            .left-heading{
+                padding: 10% 4%;
+
+                h2{
+                    color: $primarycolor;
+                    font-family: $primaryFont;
+                }
+    
+                a{
+                    font-family: $secondaryFont;
+                    color: white;
+                    font-size: 18px;
+                    letter-spacing: .1rem;
+                    line-height: 3rem;
+                    text-decoration: none;
+    
+                    svg{
+                        padding-right: 6px;
+                        transform: rotate(185deg);
+                    }
+                }
+            }
+        }
+
+        .pic-right{
+            flex-basis: 40%;
+            margin-top: 20%;
+
+            img{
+                width: 70%;
+            }
+        }
+    }
+}
+
+.footer-container{
+    margin: 6% 0%;
+}
+.footer-flex{
+    display: flex;
+
+    .footer-left{
+        display: flex;
+        flex-basis: 55%;
+
+        h2{
+            margin: 0% 5%;
+            color: white;
+            font-size: 10px;
+            font-family: 'Commissioner', sans-serif;
+            letter-spacing: .1rem;
+        }
+         ul{
+            margin: 0% 35%;
+        }
+         ul li a{
+            color: white;
+            font-size: 20px;
+            font-family: 'Commissioner', sans-serif;
+            line-height: 2rem;
+        }
+    }
+    .footer-right{
+        display: flex;
+        flex-basis: 45%;
+        margin: 0% -4%;
+
+        h1{
+            color: white;
+            font-size: 14px;
+            font-family: 'Commissioner', sans-serif;
+            line-height: 3rem;
+        }
+        ul{
+            margin: 0% 6%;
+        }
+        ul li a{
+            color: rgba(255, 255, 255, 0.616);
+            font-size: 16px;
+            font-family: 'Commissioner', sans-serif;
+            line-height: 1.5rem;
+        }
+    }
+
+}
+.ending-container{
+    padding: 2% 0%;
+}
+.ending-flex{
+    display: flex;
+
+    .ending-left{
+        flex-basis: 60%;
+        margin: 0% 2%;
+
+         a{
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1rem;
+        }
+    }
+    .ending-right{
+        flex-basis: 40%;
+
+        h2 {
+            margin: 0% 15%;
+            color: white;
+            font-size: 12px;
+            font-family: 'Commissioner', sans-serif;
+            letter-spacing: .1rem;
+        }
+    }
+
+}
+
+
+@media(max-width: 3000px) {
+    #toggle {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 6px;
+    }
+
+    nav{
+        #brand {
+            margin-left: 18px;
+        }
+      #menu{
+          display: none;
+        }
+    }
+
+    #menu a {
+          font-family: "Poppins";
+          font-weight: 200;
+          font-size: 20px;
+    }
+
+}
+
+@media(min-width: 3000px) {
+    #resize {
+          visibility: hidden !important;
+    }
+}
+
+@media(max-width: 1300px) {
+
+    #resize #menu li {
+        width: 120%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 100px;
+    }
+    #resize #menu li a {
+        font-size: 60px;
+    }
+    #resize #menu li a svg {
+        width: 6%;
+        margin-left: 2%;
+        height: 0%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 10%;
+        position: relative;
+        top: 25%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+
+
+  .brand-container{
+
+    .bike{
+        width: 30%;
+        left: 36%;
+    }
+    .social-brand{
+        position: absolute;
+        top: 96%;
+        left: 10%;
+    
+        ul li{
+            font-size: 16px;
+        }
+    }
+    .brand-horz {
+        position: absolute;
+        top: 96%;
+        left: 92%;
+        width: 15%;
+    }
+}
+
+.about-flex{
+
+    .about-left{
+
+        img{
+            width: 80%;
+        }
+    }
+
+    .about-right{
+        margin-top: 40%;
+    }
+}
+
+
+    .leather-container{
+
+        h1{
+            width: 30%;
+        }
+
+        .leather-heading{
+
+            h2{
+                margin-left: 50%;
+            }
+    
+            h3{
+                margin-left: 8%;
+            }
+        }
+    }
+
+
+.pic-container{
+
+    .pic-flex{
+
+        .pic-left{
+
+            img{
+                width: 80%;
+            }
+        }
+
+        .pic-right{
+
+            img{
+                width: 80%;
+            }
+        }
+    }
+}
+
+.footer-container{
+
+    .footer-flex{
+        display: flex;
+    
+    
+        .footer-left{
+            margin: 0% 5%;
+    
+            h2{
+                margin: 0% 0%;
+                font-size: 11px;
+            }
+            ul{
+                margin: 0% 25%;
+            }
+            ul li a{
+                font-size: 16px;
+            }
+        }
+        .footer-right{
+            margin: -1% -15%;
+    
+            h1{
+                font-size: 14px;
+            }
+            ul{
+                margin: 0% 5%;
+            }
+            ul li a{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.ending-container{
+    .ending-flex{
+        display: flex;
+    
+        
+    .ending-left a{
+        font-size: 16px;
+        letter-spacing: .6rem;
+    }
+    .ending-right h2{
+        margin: 0% 0%;
+        font-size: 11px;
+        letter-spacing: .1rem;
+    }
+    
+      }
+}
+
+}
+
+@media (max-width:800px) { 
+
+    .leather-container{
+
+        h1{
+            width: 40%;
+        }
+
+        .leather-heading{
+
+            h2{
+                margin-left: 50%;
+            }
+    
+            h3{
+                margin-left: 10%;
+            }
+        }
+    }
+    
+    .footer-container{
+
+        .footer-flex{
+            display: flex;
+        
+        
+            .footer-left{
+                margin: 0% 5%;
+        
+                h2{
+                    margin: 0% 0%;
+                    font-size: 11px;
+                }
+                ul{
+                    margin: 0% 25%;
+                }
+                ul li a{
+                    font-size: 16px;
+                }
+            }
+            .footer-right{
+                margin: -1% -15%;
+        
+                h1{
+                    font-size: 14px;
+                }
+                ul{
+                    margin: 0% 2%;
+                }
+                ul li a{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+.ending-container{
+
+    .ending-flex{
+
+        .ending-left a{
+            font-size: 16px;
+            letter-spacing: .6rem;
+        }
+        .ending-right h2{
+            margin: 0% -10%;
+            font-size: 10px;
+            letter-spacing: .1rem;
+        }
+    }
+}
+
+}
+
+@media(max-width: 600px) {
+
+    nav #TSA h1 {
+        margin-left: 10px;
+        font-size: 22px;
+        letter-spacing: .6rem;
+    }
+    nav #TSA h2 {
+        margin-right: 70px;
+        font-size: 14px;
+    }
+    #resize #menu li {
+        width: 130%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 120px;
+    }
+    #resize #menu li a {
+        font-size: 30px;
+    }
+    #resize #menu li a svg {
+        width: 9%;
+        margin-left: 2%;
+        height: -10%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 0%;
+        position: relative;
+        top: 30%;
+        left: 0%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+
+    .brand-container{
+
+        .bike{
+            width: 40%;
+            left: 30%;
+        }
+        .social-brand{
+            position: absolute;
+            top: 96%;
+            left: 20%;
+        
+            ul li{
+                font-size: 15px;
+            }
+        }
+        .brand-horz {
+            position: absolute;
+            top: 96%;
+            left: 85%;
+            width: 25%;
+        }
+    }
+    
+    .about-flex{
+        display: block;
+    
+        .about-left{
+        margin-left: 6%;
+    
+            img{
+                width: 95%;
+            }
+        }
+    }
+    
+    .leather-container{
+
+        h1{
+            width: 55%;
+        }
+
+        .leather-heading{
+
+            h2{
+                margin-left: 52%;
+            }
+    
+            h3{
+                margin-left: 16%;
+            }
+        }
+    }
+
+    .pic-container{
+    
+        .pic-flex{
+            display: block;
+    
+            .pic-left{
+    
+                img{
+                    width: 80%;
+                }
+            }
+    
+            .pic-right{
+    
+                img{
+                    width: 0%;
+                }
+            }
+        }
+
+    }
+    
+
+.footer-container{
+
+    .footer-flex{
+        display: block;
+    
+    
+        .footer-left{
+            margin: 10% 0%;
+    
+            h2{
+                margin: 0% 10%;
+                font-size: 10px;
+            }
+            ul{
+                margin: 0% 20%;
+            }
+            ul li a{
+                font-size: 15px;
+            }
+        }
+        .footer-right{
+            margin: 0% 0%;
+    
+            h1{
+                font-size: 10px;
+            }
+            ul{
+                margin: 0% 6%;
+            }
+            ul li a{
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.ending-container{
+
+    .ending-flex{
+
+        .ending-left a{
+            font-size: 16px;
+            letter-spacing: .6rem;
+        }
+        .ending-right h2{
+            margin: 0% 0%;
+            font-size: 7px;
+            letter-spacing: .1rem;
+        }
+    }
+}
+
+}
+
+
+@media (max-width:380px) {
+
+
+        #resize li:nth-child(1) {
+            margin-top: 100px;
+        }
+        #resize #menu li a {
+            font-size: 20px;
+        }
+        #resize #menu li a span {
+            font-size: 10px;
+        }
+        .resize-heading{
+            top: 45%;
+            left: 0%;
+        }
+        .resize-heading h2{
+            width: 100%;
+            font-size: 10px;
+        }
+
+        .brand-container{
+
+            .brand-horz {
+                width: 30%;
+            }
+        }
+
+    .leather-container{
+
+        img{
+            width: 90%;
+        }
+        .leather-heading{
+
+            h2{
+                margin-left: 45%;
+            }
+    
+            h3{
+                margin-left: 16%;
+            }
+        }
+    }
+
+    .footer-container{
+
+        .footer-flex{
+        
+        
+            .footer-left{
+                ul{
+                    margin: 0% 15%;
+                }
+
+            }
+            .footer-right{
+                ul{
+                    margin: 0% 4%;
+                }
+            }
+        }
+    }
+
+}

@@ -53,16 +53,7 @@ tl.to(".loader", 1.6, {
 });
 
 
-      var t1 = new TimelineMax({ paused: true });
-
-      TweenMax.from(".social-brand", 2, {
-        y: 20,
-        opacity: 0,
-        ease: Expo.easeInOut,
-        delay: 4.5
-      });
-
-      var t1 = new TimelineMax({ paused: true });
+var t1 = new TimelineMax({ paused: true });
 
       TweenMax.from(".btn-flex", 2, {
         y: 20,
@@ -71,15 +62,5 @@ tl.to(".loader", 1.6, {
         delay: 4.5
       });
 
-
-
-      var t1 = new TimelineMax({ paused: true });
-
-      TweenMax.from(".brand-horz", 2, {
-        y: 20,
-        opacity: 0,
-        ease: Expo.easeInOut,
-        delay: 4.5
-      });
 
       

@@ -1464,15 +1464,15 @@ nav #TSA h2 span {
   }
   .resize-heading {
     position: relative;
-    top: 20%;
+    top: 90%;
     left: 0%;
   }
   .resize-heading h1 {
-    width: 100%;
+    width: 200%;
     font-size: 15px;
   }
   .resize-heading h2 {
-    width: 100%;
+    width: 200%;
     font-size: 12px;
   }
   .resize-heading a {

@@ -34,7 +34,7 @@ $("#toggle").click(function() {
 
 
 TweenMax.to(".wrapper", 2, {
-    top: "-100%",
+    top: "-120%",
     ease: Expo.easeInOut,
     delay: 3.2
 });

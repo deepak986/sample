@@ -1,0 +1,982 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: linear-gradient(to right, #1d1010f5, #000);
+    scroll-behavior: smooth;
+}
+
+.nav-container{
+    height: 20vh;
+}
+nav {
+    width: 100%;
+    background: transparent;
+    height: 100vh;
+    z-index: 1;
+}
+nav #TSA{
+    color:rgba(255, 255, 255, 0.945);
+    font-family: 'Tajawal', sans-serif;
+}
+nav #TSA h1 a {
+    color:rgba(255, 255, 255, 0.87);
+}
+nav #TSA h1 a:hover {
+    color: white;
+}
+
+nav #TSA h1 {
+    float: left;
+    display: block;
+    margin-left: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    line-height: 5rem;
+}
+nav #TSA h2 {
+    float: right;
+    margin-right: 120px;
+    display: block;
+    font-size: 14px;
+    line-height: 4.5rem;
+    letter-spacing: .5rem;
+}
+nav #TSA h2 span {
+    float: right;
+    line-height: 4rem;
+    display: block;
+    font-size: 12px;
+}
+
+#toggle {
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toogle{
+    background: white;
+}
+#toggle .span {
+    border-radius: 20px;
+    height: 1.5px;
+    background: white;
+    backface-visibility: hidden;
+    margin: 10px auto;
+    transition: all .6s ease-out;
+}
+
+#toggle.on #one {
+    transform: rotate(40deg) translateX(0px) translateY(0px);
+}
+
+#toggle.on #two {
+    transform: rotate(-40deg) translateX(7.5px) translateY(-9.5px);
+}
+
+#resize {
+    z-index: 1;
+    top: 0px;
+    position: absolute;
+    background: #bbb8ab;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-out;
+    display: table;
+}
+
+#resize #menu {
+    height: 90px;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    padding: 20px 0;
+    min-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+    margin-top: 140px;
+}
+
+#resize #menu li a {
+    color: white;
+    font-weight: 100;
+    font-size: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    margin-left: 3%;
+    text-transform: uppercase;
+}
+#resize #menu li a span {
+    font-size: 20px;
+    font-family: 'Commissioner', sans-serif;
+    margin: 0% 8%;
+    text-transform: uppercase;
+}
+#resize #menu li a svg {
+    transform: rotate(45deg);
+    margin-left: 2%;
+    opacity: 0;
+}
+#resize #menu li a:hover svg {
+    opacity: 1;
+    transition: .6s ease-in;
+}
+#resize.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 1.2s ease-in;
+}
+.resize-heading{
+    margin: 0% 35%;
+}
+.resize-heading h1{
+    width: 200%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Commissioner', sans-serif;
+}
+.resize-heading h2{
+    width: 175%;
+    font-size: 15px;
+    font-family: 'Commissioner', sans-serif;
+    color: rgba(255, 255, 255, 0.801);
+    letter-spacing: .2rem;
+    line-height: 1.5rem;
+}
+.resize-heading h2:nth-child(2){
+    margin: 20% 0%;
+}
+.resize-heading a{
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 4rem; 
+}
+.resize-heading a:hover{
+    text-decoration: underline;
+    padding-right: .8%;
+}
+.brand-flex{
+    display: flex;
+}
+.brand-left{
+    margin: 3% 5%;
+    flex-basis: 70%;
+}
+.brand-right{
+    flex-basis: 30%;
+}
+.brand-left h2{
+    color: white;
+    font-size: 90px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+}
+.brand-left p{
+    width: 25%;
+    margin: 5% 35%;
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 15px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+.brand-right img{
+    margin: -15% -30%;
+    width: 110%;
+}
+.social-brand{
+    position: absolute;
+    top: 94%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+}
+.social-brand ul li {
+    font-size: 18px;
+    font-family: 'Commissioner', sans-serif;
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.social-brand ul li a {
+    color: rgba(255, 255, 255, 0.884);
+    text-transform: uppercase;
+}
+
+.brand-horz {
+  position: absolute;
+  top: 95%;
+  left: 94%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+}
+.about-container{
+    margin: 10% 0%;
+}
+.about-flex{
+    display: flex;
+}
+.about-left{
+    flex-basis: 60%;
+}
+.about-right{
+    flex-basis: 40%;
+}
+.about-right h1{
+    width: 50%;
+    color: white;
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+}
+.about-right p{
+    width: 45%;
+    margin: 4% 0%;
+    color: rgba(255, 255, 255, 0.712);
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    line-height: 1.3rem;
+}
+
+.middle-container img{
+    width: 15%;
+    margin: -28% 35%;
+}
+.middle-container h1{
+    width: 70%;
+    margin: 0% 15%;
+    font-size: 55px;
+    font-family: 'Commissioner', sans-serif;
+    color: white;
+}
+.middle-container h1 span{
+    font-size: 70px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+}
+.middle-container h1 span1{
+    text-decoration: 3px underline;
+}
+.middle-container p{
+    width: 20%;
+    margin: 5% 70%;
+    color: rgba(255, 255, 255, 0.712);
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    line-height: 1.7rem;
+}
+.family-container{
+    padding: 10% 0%;
+}
+.family-flex{
+    display: flex;
+}
+.family-left{
+    margin: 0% 20%;
+}
+.family-left img{
+    width: 240%;
+}
+.family-right h2{
+    width: 50%;
+    margin: 5% -45%;
+    float: left;
+    font-size: 15px;
+    font-family: 'Commissioner', sans-serif;
+    color: white;
+    line-height: 1.5rem;
+}
+
+.year-container h1{
+    margin: 5% 10%;
+    width: 50%;
+    color: white;
+    font-size: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100;
+}
+.year-container h1 span{
+    font-family: 'Commissioner', sans-serif;
+}
+.year-flex{
+    margin: 10% 0%;
+    display: flex;
+    color: white;
+}
+.year-left{
+    flex-basis: 50%;
+    margin: 0% 15%;
+}
+.year-right{
+    flex-basis: 50%;
+}
+.year-right img{
+    width: 50%;
+    margin: 8% 0%;
+}
+.year-left h2{
+    width: 70%;
+    margin: 10% 0%;
+    color: white;
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 100; 
+}
+.year-left p{
+    width: 70%;
+    color: rgba(255, 255, 255, 0.603);
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    line-height: 1.4rem;
+    letter-spacing: .1rem;
+}
+.footer-flex{
+    display: flex;
+}
+.footer-left{
+    display: flex;
+    flex-basis: 55%;
+}
+.footer-right{
+    display: flex;
+    flex-basis: 45%;
+    margin: 0% -5%;
+}
+.footer-left h2{
+    margin: 0% 5%;
+    color: white;
+    font-size: 10px;
+    font-family: 'Commissioner', sans-serif;
+    letter-spacing: .1rem;
+}
+.footer-left ul{
+    margin: 0% 35%;
+}
+.footer-left ul li a{
+    color: white;
+    font-size: 20px;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 2rem;
+}
+.footer-right h1{
+    color: white;
+    font-size: 14px;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 3rem;
+}
+.footer-right ul{
+    margin: 0% 6%;
+}
+.footer-right ul li a{
+    color: rgba(255, 255, 255, 0.616);
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 1.5rem;
+}
+.ending-container{
+    padding: 4% 0%;
+}
+.ending-flex{
+    display: flex;
+}
+.ending-left{
+    flex-basis: 60%;
+    margin: 0% 2%;
+}
+.ending-right{
+    flex-basis: 40%;
+}
+.ending-left a{
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1rem;
+}
+.ending-right h2{
+    margin: 0% 15%;
+    color: white;
+    font-size: 12px;
+    font-family: 'Commissioner', sans-serif;
+    letter-spacing: .1rem;
+}
+
+@media(max-width: 3000px) {
+    #toggle {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 6px;
+    }
+
+    nav #brand {
+          margin-left: 18px;
+    }
+
+    #menu a {
+          font-family: "Poppins";
+          font-weight: 200;
+          font-size: 20px;
+    }
+
+    nav #menu {
+          display: none;
+    }
+}
+
+@media(min-width: 3000px) {
+    #resize {
+          visibility: hidden !important;
+    }
+}
+
+@media(max-width: 3000px) {
+    #toggle {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 6px;
+    }
+
+    nav #brand {
+          margin-left: 18px;
+    }
+
+    #menu a {
+          font-family: "Poppins";
+          font-weight: 200;
+          font-size: 20px;
+    }
+
+    nav #menu {
+          display: none;
+    }
+}
+
+@media(min-width: 3000px) {
+    #resize {
+          visibility: hidden !important;
+    }
+}
+
+@media(max-width: 1300px){
+    #resize #menu li {
+        width: 120%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 100px;
+    }
+    #resize #menu li a {
+        font-size: 60px;
+    }
+    #resize #menu li a svg {
+        width: 6%;
+        margin-left: 2%;
+        height: 0%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 20%;
+        position: relative;
+        top: 10%;
+    }
+    .resize-heading h2:nth-child(2){
+        margin: 10% 0%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+    .brand-left{
+        margin: 0% 2%;
+    }
+    .brand-left h2{
+        width: 80%;
+        font-size: 90px;
+    }
+    .brand-left p{
+        width: 40%;
+        margin: 5% 40%;
+        font-size: 15px;
+        letter-spacing: .1rem;
+    }
+    .brand-right img{
+        margin: 10% -30%;
+        width: 120%;
+    }
+    .social-brand{
+        top: 95%;
+        left: 10%;
+    }
+    .brand-horz {
+        width: 15%;
+        top: 95%;
+        left: 90%;
+    }
+    .about-right h1{
+        width: 70%;
+        font-size: 40px;
+    }
+    .about-right p{
+        width: 70%;
+        margin: 4% 0%;
+        line-height: 1.4rem;
+    }
+    .middle-container img{
+        width: 15%;
+        margin: -35% 35%;
+    }
+    .middle-container h1{
+        width: 80%;
+        margin: 0% 10%;
+        font-size: 55px;
+    }
+    .middle-container h1 span{
+        font-size: 70px;
+    }
+    .middle-container p{
+        width: 28%;
+        margin: 5% 60%;
+    }
+    .family-left{
+        margin: 0% 0%;
+    }
+    .family-left img{
+        width: 220%;
+        margin: 0% 10%;
+    }
+    .family-right h2{
+        width: 60%;
+        margin: 10% 10%;
+        font-size: 15px;
+    }
+    .year-container h1{
+        margin: 5% 10%;
+        width: 60%;
+        font-size: 80px;
+    }
+    .year-right img{
+        width: 80%;
+        margin: 5% -10%;
+    }
+    .year-left h2{
+        width: 100%;
+        margin: 10% 0%;
+        font-size: 40px;
+    }
+    .year-left p{
+        width: 100%;
+        line-height: 1.4rem;
+        letter-spacing: .1rem;
+    }
+    .footer-left{
+        margin: 0% 5%;
+    }
+    .footer-right{
+        margin: -1% -15%;
+    }
+    .footer-left h2{
+        margin: 0% 0%;
+        font-size: 12px;
+    }
+    .footer-left ul{
+        margin: 0% 25%;
+    }
+    .footer-left ul li a{
+        font-size: 20px;
+    }
+    .footer-right h1{
+        font-size: 14px;
+    }
+    .footer-right ul{
+        margin: 0% 3%;
+    }
+    .footer-right ul li a{
+        font-size: 14px;
+    }
+    .ending-left a{
+        font-size: 16px;
+        letter-spacing: .6rem;
+    }
+    .ending-right h2{
+        margin: 0% 0%;
+        font-size: 9px;
+        letter-spacing: .1rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .brand-left{
+        margin: 0% 2%;
+    }
+    .brand-left h2{
+        width: 80%;
+        font-size: 80px;
+    }
+    .brand-left p{
+        width: 50%;
+        margin: 10% 40%;
+        font-size: 15px;
+        letter-spacing: .1rem;
+    }
+    .brand-right img{
+        margin: 10% -50%;
+        width: 140%;
+    }
+    .social-brand{
+        top: 95%;
+        left: 12%;
+    }
+    .brand-horz {
+        top: 95%;
+        left: 90%;
+        width: 20%;
+    }
+    .about-right h1{
+        width: 80%;
+        font-size: 40px;
+    }
+    .about-right p{
+        width: 80%;
+        margin: 4% 0%;
+        line-height: 1.4rem;
+    }
+    .middle-container img{
+        width: 15%;
+        margin: -35% 35%;
+    }
+    .middle-container h1{
+        width: 90%;
+        margin: 0% 5%;
+        font-size: 50px;
+    }
+    .middle-container h1 span{
+        font-size: 55px;
+    }
+    .middle-container p{
+        width: 38%;
+        margin: 5% 50%;
+    }
+    .family-left{
+        margin: 0% 0%;
+    }
+    .family-left img{
+        width: 220%;
+        margin: 0% 10%;
+    }
+    .family-right h2{
+        width: 80%;
+        margin: 10% 10%;
+        font-size: 15px;
+    }
+    .year-container h1{
+        margin: 5% 10%;
+        width: 80%;
+        font-size: 80px;
+    }
+    .year-right img{
+        width: 90%;
+        margin: 10% -10%;
+    }
+    .year-left h2{
+        width: 120%;
+        margin: 8% 0%;
+        font-size: 35px;
+    }
+    .year-left p{
+        width: 120%;
+        line-height: 1.4rem;
+        letter-spacing: .1rem;
+    }
+    .footer-right ul{
+        margin: 0% 0%;
+    }
+    .footer-right ul li a{
+        font-size: 14px;
+    }  
+}
+
+
+@media(max-width: 600px) {
+    #toggle {
+        right: 20px;
+    }
+    nav #TSA h1 {
+        margin: -3px 10px;
+        font-size: 22px;
+        letter-spacing: .6rem;
+    }
+    nav #TSA h2 {
+        margin-right: 80px;
+        font-size: 14px;
+    }
+    #resize #menu li {
+        width: 130%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 120px;
+    }
+    #resize #menu li a {
+        font-size: 30px;
+    }
+    #resize #menu li a svg {
+        width: 9%;
+        margin-left: 2%;
+        height: -10%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 0%;
+        position: relative;
+        top: 30%;
+        left: 0%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+    .brand-flex{
+        display: block;
+    }
+    .brand-left{
+        margin: 0% 0%;
+    }
+    .brand-left h2{
+        font-size: 80px;
+    }
+    .brand-left p{
+        width: 50%;
+        margin: 5% 45%;
+        color: rgba(255, 255, 255, 0.829);
+        font-size: 15px;
+        font-family: 'Tajawal', sans-serif;
+        font-weight: 600;
+        letter-spacing: .1rem;
+    }
+    .brand-right img{
+        margin: 0% 0%;
+        width: 100%;
+    }
+    .social-brand{
+        top: 95%;
+        left: 20%;
+    }
+    .social-brand ul li {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    .social-brand ul li a{
+        color: black;
+        font-weight: 600;
+    }
+    .brand-horz {
+        color: black;
+        font-weight: 800;
+        top: 95%;
+        left: 83%;
+        width: 30%;
+    }
+    .about-flex{
+        display: block;
+    }
+    .about-right{
+        margin: 10% 15%;
+    }
+    .about-right h1{
+        width: 95%;
+        font-size: 40px;
+    }
+    .about-right p{
+        width: 60%;
+        margin: 4% 0%;
+        letter-spacing: .1rem;
+    }
+    .middle-container img{
+        width: 15%;
+        margin: -28% 35%;
+    }
+    .middle-container h1{
+        width: 100%;
+        margin: 0% 0%;
+        font-size: 25px;
+    }
+    .middle-container h1 span{
+        font-size: 30px;
+    }
+    .middle-container p{
+        width: 80%;
+        margin: 15% 5%;
+    }
+    .family-container{
+        padding: 10% 0%;
+    }
+    .family-left{
+        margin: 0% 0%;
+    }
+    .family-left img{
+        width: 175%;
+    }
+    .family-right h2{
+        width: 120%;
+        margin: 10% -60%;
+        font-size: 10px;
+        line-height: 1rem;
+    }
+    .year-container h1{
+        margin: 5% 10%;
+        width: 80%;
+        font-size: 40px;
+    }
+    .year-flex{
+        display: block;
+    }
+    .year-left{
+        margin: 0% 10%;
+    }
+    .year-right img{
+        width: 100%;
+        margin: 8% 0%;
+    }
+    .year-left h2{
+        width: 80%;
+        margin: 10% 0%;
+        font-size: 20px;
+    }
+    .year-left p{
+        width: 80%;
+    }
+    .footer-flex{
+        display: block;
+    }
+    .footer-right{
+        margin: 0% 10%;
+    }
+    .footer-left{
+        margin: 10% 0%;
+    }
+    .footer-left h2{
+        margin: 0% 15%;
+        font-size: 10px;
+    }
+    .footer-left ul{
+        margin: 0% 20%;
+    }
+    .footer-left ul li a{
+        font-size: 15px;
+    }
+    .footer-right h1{
+        font-size: 10px;
+    }
+    .footer-right ul{
+        margin: 0% 6%;
+    }
+    .footer-right ul li a{
+        font-size: 10px;
+    }
+    .ending-left a{
+        font-size: 16px;
+        letter-spacing: .6rem;
+    }
+    .ending-right h2{
+        margin: 0% 15%;
+        font-size: 8px;
+        line-height: 1rem;
+        letter-spacing: .2rem;
+    }
+}
+@media(max-width: 380px) {
+
+    #resize li:nth-child(1) {
+        margin-top: 100px;
+    }
+    #resize #menu li a {
+        font-size: 20px;
+    }
+    #resize #menu li a span {
+        font-size: 10px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 10px;
+    }
+    .social-brand{
+        top: 98%;
+        left: 20%;
+    }
+    .brand-horz {
+        top: 98%;
+        left: 83%;
+    }
+
+}
+
+@media(max-width: 360px){
+    nav #TSA h1 {
+        margin: -3px 10px;
+        font-size: 20px;
+        letter-spacing: .4rem;
+    }
+    nav #TSA h2 {
+        margin-right: 80px;
+    }
+    .brand-left h2{
+        font-size: 60px;
+    }
+    .social-brand{
+        top: 68%;
+        left: 20%;
+    }
+    .brand-horz {
+        top: 68%;
+        left: 83%;
+    }
+}

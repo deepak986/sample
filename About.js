@@ -28,7 +28,7 @@ anime.timeline()
 
 
 TweenMax.to(".wrapper", 2, {
-    top: "-110%",
+    top: "-120%",
     ease: Expo.easeInOut,
     delay: 1.6
 });

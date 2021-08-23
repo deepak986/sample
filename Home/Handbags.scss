@@ -1,0 +1,513 @@
+$primarycolor: white;
+$primaryFont: 'Cormorant Garamond', serif;
+$secondaryFont: 'Commissioner', sans-serif; 
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background: #968d88;
+    scroll-behavior: smooth;
+}
+.nav-container{
+    height: 15vh;
+}
+nav {
+    width: 100%;
+    background: transparent;
+    height: 100vh;
+
+    #TSA{
+        color:rgba(255, 255, 255, 0.945);
+        font-family: 'Tajawal', sans-serif;
+    }
+    #TSA h1 a {
+        color:rgba(255, 255, 255, 0.87);
+    }
+    #TSA h1 a:hover {
+        color: $primarycolor;
+    }
+    
+    #TSA h1 {
+        float: left;
+        display: block;
+        margin-left: 50px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        line-height: 5rem;
+    }
+    #TSA h2 {
+        float: right;
+        margin-right: 100px;
+        display: block;
+        font-size: 14px;
+        line-height: 4.5rem;
+        letter-spacing: .5rem;
+    }
+    #TSA h2 span {
+        float: right;
+        line-height: 4rem;
+        display: block;
+        font-size: 12px;
+    }
+}
+
+
+#toggle {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+#toggle .span {
+    border-radius: 20px;
+    height: 1.5px;
+    background: $primarycolor;
+    backface-visibility: hidden;
+    margin: 10px auto;
+    transition: all .6s ease-out;
+}
+#toggle.on {
+    z-index: 999;
+}
+#toggle.on #one {
+    transform: rotate(40deg) translateX(0px) translateY(0px);
+}
+
+#toggle.on #two {
+    transform: rotate(-40deg) translateX(7.5px) translateY(-9.5px);
+}
+
+#resize {
+    z-index: 1;
+    top: 0px;
+    position: absolute;
+    background: #bbb8ab;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-out;
+    display: table;
+}
+
+#resize #menu {
+    height: 90px;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    padding: 20px 0;
+    min-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+    margin-top: 140px;
+}
+
+#resize #menu li a {
+    color: $primarycolor;
+    font-weight: 100;
+    font-size: 80px;
+    font-family: $primaryFont;
+    margin-left: 3%;
+    text-transform: uppercase;
+}
+#resize #menu li a span {
+    font-size: 20px;
+    font-family: $secondaryFont;
+    margin: 0% 8%;
+    text-transform: uppercase;
+}
+#resize #menu li a svg {
+    transform: rotate(45deg);
+    margin-left: 2%;
+    opacity: 0;
+}
+#resize #menu li a:hover svg {
+    opacity: 1;
+    transition: .6s ease-in;
+}
+#resize.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 1.2s ease-in;
+}
+.resize-heading{
+    margin: 0% 38%;
+
+    h1{
+        width: 200%;
+        color: $primarycolor;
+        font-size: 20px;
+        font-family: $secondaryFont;
+    }
+    h2{
+        width: 175%;
+        font-size: 15px;
+        font-family: $secondaryFont;
+        color: rgba(255, 255, 255, 0.801);
+        letter-spacing: .2rem;
+        line-height: 1.5rem;
+    }
+    h2:nth-child(2){
+        margin: 10% 0%;
+    }
+    a{
+        color: $primarycolor;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        font-family: $secondaryFont;
+        line-height: 4rem; 
+    }
+    a:hover{
+        text-decoration: underline;
+        padding-right: .8%;
+    }
+}
+
+.types-container{
+
+    p{
+        padding: 2% 2%;
+        font-family: $secondaryFont;
+        font-size: 22px;
+        color: white;
+    }
+
+    ul{
+        padding: 0% 2%;
+    }
+    ul li a{
+        font-family: $secondaryFont;
+        font-size: 18px;
+        color: black;
+        line-height: 1.6rem;
+    }
+
+    .white{
+        color: white;
+    }
+    
+    h1{
+        text-align: center;
+        font-size: 80px;
+        font-family: $primaryFont;
+        font-weight: 100;
+    }
+}
+
+.features{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .cards{
+        padding: 5% 0%;
+        display: flex;
+        width: 100%;
+        color: black;
+    }
+    .card{
+        margin: 0% 2%;
+        display: flex;
+        background: #bbb8ab;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .price{
+        display: flex;
+        padding: 1rem 0rem;    
+
+        h2{
+            margin-left: 2%;
+            font-size: 19px;
+            font-family: $secondaryFont;
+            font-weight: 100;
+        }
+    
+        .marq{
+            width: 20%;
+            margin-left: 45%;
+            color: $primarycolor;
+            font-size: 14px;
+            background-color: black;
+        }
+    }
+}
+
+#cursor {
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    will-change: transform;
+
+    .cursor--inner {
+        width: 4vw;
+        height: 4vw;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border: solid 1px #1d213f;
+      }
+  }
+
+
+@media(max-width: 3000px) {
+    #toggle {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 6px;
+    }
+
+    nav{
+        #brand {
+            margin-left: 18px;
+        }
+      #menu{
+          display: none;
+        }
+    }
+
+    #menu a {
+          font-family: "Poppins";
+          font-weight: 200;
+          font-size: 20px;
+    }
+
+}
+
+@media(min-width: 3000px) {
+    #resize {
+          visibility: hidden !important;
+    }
+}
+
+@media(max-width: 1300px) {
+
+    #resize #menu li {
+        width: 120%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 100px;
+    }
+    #resize #menu li a {
+        font-size: 60px;
+    }
+    #resize #menu li a svg {
+        width: 6%;
+        margin-left: 2%;
+        height: 0%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 20%;
+        position: relative;
+        top: 25%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+
+
+    .features{
+        width: 100%;
+    
+        .cards{
+            color: black;
+        }
+        .card{
+
+            img{
+                width: 100%;
+            }
+        }
+    
+        .price{
+            display: flex;
+            padding: 2% 0%;
+        
+            h2{
+                margin-left: 2%;
+                font-size: 14px;
+            }
+        
+            .marq{
+                width: 20%;
+                margin-left: 38%;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+
+    .features{
+        width: 60%;
+    
+        .cards{
+            display: block;
+            color: black;
+        }
+        .card{
+            margin: 2% 0%;
+
+            img{
+                width: 100%;
+            }
+        }
+    
+        .price{
+            display: flex;
+            padding: 2% 0%;
+        
+            h2{
+                margin-left: 2%;
+                font-size: 17px;
+            }
+        
+            .marq{
+                width: 15%;
+                margin-left: 62%;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    nav #TSA h1 {
+        margin-left: 10px;
+        font-size: 22px;
+        letter-spacing: .6rem;
+    }
+    nav #TSA h2 {
+        margin-right: 70px;
+        font-size: 14px;
+    }
+    #resize #menu li {
+        width: 130%;
+    }
+    #resize li:nth-child(1) {
+        margin-top: 120px;
+    }
+    #resize #menu li a {
+        font-size: 30px;
+    }
+    #resize #menu li a svg {
+        width: 9%;
+        margin-left: 2%;
+        height: -10%;
+    }
+    #resize #menu li a span {
+        font-size: 15px;
+        margin: 0% 2%;
+    }
+    .resize-heading{
+        margin: 0% 0%;
+        position: relative;
+        top: 30%;
+        left: 0%;
+    }
+    .resize-heading h1{
+        width: 100%;
+        font-size: 15px;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 12px;
+    }
+    .resize-heading a{
+        font-size: 12px;
+    }
+
+    .features{
+        width: 90%;
+    
+        .cards{
+            color: black;
+            display: block;
+        }
+        .card{
+            display: block;
+            margin: 2% 0%;
+
+            img{
+                width: 100%;
+            }
+        }
+    
+        .price{
+            display: flex;
+            padding: 2% 0%;
+        
+            h2{
+                margin-left: 2%;
+                font-size: 17px;
+            }
+        
+            .marq{
+                width: 15%;
+                margin-left: 55%;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+@media (max-width:380px) {
+
+    #resize li:nth-child(1) {
+        margin-top: 100px;
+    }
+    #resize #menu li a {
+        font-size: 20px;
+    }
+    #resize #menu li a span {
+        font-size: 10px;
+    }
+    .resize-heading{
+        top: 45%;
+        left: 0%;
+    }
+    .resize-heading h2{
+        width: 100%;
+        font-size: 10px;
+    }
+    
+}
